@@ -58,7 +58,7 @@ const News = (props) => {
 
   return (
     <div className='container my-3'>
-      <h3 className="text-center my-4">
+      <h3 className="text-center">
         NewsHub - Top {props.category === "general" ? "" : `${props.category.charAt(0).toUpperCase() + props.category.slice(1)}`} Headlines
       </h3>
       {loading && <Spinner />}
