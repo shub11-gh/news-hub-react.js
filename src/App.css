@@ -36,3 +36,171 @@
     transform: rotate(360deg);
   }
 }
+
+body, html {
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f8fafc 0%, #e9ecef 100%);
+  background-attachment: fixed;
+}
+
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.spinner-container, .spinner, .text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.news-card {
+  border-radius: 10px;
+  padding: 5px 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 370px;
+  opacity: 0;
+  transform: translateY(32px);
+  animation: fadeInUp 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+  transition:
+    transform 0.35s cubic-bezier(0.4,0,0.2,1),
+    box-shadow 0.35s cubic-bezier(0.4,0,0.2,1),
+    opacity 0.35s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform, box-shadow, opacity;
+}
+
+.news-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+  opacity: 1;
+}
+.news-img-container {
+  position: relative;
+}
+.news-source-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #f11946;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.news-card .card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.news-card .card-text {
+  font-size: 0.90rem;
+  margin-bottom: 0.75rem;
+}
+
+.news-card .btn {
+  align-self: flex-end;
+  margin-top: auto;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+}
+
+.news-header {
+  background: linear-gradient(90deg, #f11946 0%, #ff8a00 100%);
+  color: #fff;
+  padding: 32px 0 24px 0;
+  border-radius: 0 0 32px 32px;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  background: #f11946;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back-to-top-btn:hover {
+  transform: scale(1.08);
+}
+
+/* Add to App.css */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  border-bottom: 1px solid rgba(200,200,200,0.2);
+  padding: 0.75rem 2rem;
+  z-index: 1000;
+}
+.glass-navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #f11946 !important;
+}
+.glass-navbar .nav-link {
+  color: #222 !important;
+  font-weight: 500;
+  margin-right: 1.5rem;
+  transition: color 0.2s;
+}
+.glass-navbar .nav-link.active,
+.glass-navbar .nav-link:hover {
+  color: #f11946 !important;
+}
+
+.sticky-top {
+  z-index: 1050 !important;
+}
